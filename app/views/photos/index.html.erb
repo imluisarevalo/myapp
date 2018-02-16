@@ -12,9 +12,11 @@
       <td>
   </tr>
     <tr class="grid-item" style="width: 25%">
+      <th>Name</th>
       <th>Url</th>
       <th>Description</th>
       <th>Active</th>
+      <th>Created By</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +24,12 @@
   <tbody align="center">
     <% @photos.each do |photo| %>
       <tr class="grid-item" style="width: 25%">
+        <td><%= photo.name %></td>
+
         <td ><%= image_tag(photo.url, :style=>'width:200px') %></td>
         <td><%= photo.description %></td>
         <td><%= if(photo.active)then image_tag('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Button_Icon_Green.svg/1024px-Button_Icon_Green.svg.png',:style=>'width:30px') else image_tag('http://www.urltarget.com/images/red-green-icon-blue-simple-glossy-circle-cartoon.png',:style=>'width:30px') end %></td>
+        <td><%= photo.user_id %></td>
         <td><%= link_to image_tag('https://cdn2.iconfinder.com/data/icons/picons-essentials/71/visibility-512.png',:style=>'width:50px'), photo %></td>
         <% if !current_user.nil? %>
         <td><%= link_to image_tag('https://cdn1.iconfinder.com/data/icons/hawcons/32/698873-icon-136-document-edit-512.png',:style=>'width:50px'), edit_photo_path(photo) %></td>

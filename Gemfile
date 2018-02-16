@@ -10,7 +10,6 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'devise'
 gem 'activeadmin'
-gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

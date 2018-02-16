@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :url %>
     <%= form.text_field :url, id: :photo_url %>
   </div>
@@ -24,6 +29,11 @@
   <div class="field">
     <%= form.label :active %>
     <%= form.check_box :active, id: :photo_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="actions">
