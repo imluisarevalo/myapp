@@ -1,0 +1,41 @@
+<%= @user_id %>
+<p id="notice"><%= notice %></p>
+
+<h1>Photos</h1>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <td>
+      <% if user_signed_in? %>
+        <%= link_to image_tag('http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/add-1-icon.png',:style=>'width:50px'), new_photo_path %>
+      <% end %>
+    <td>
+  </tr>
+  <tr>
+    <th>Url</th>
+    <th>Description</th>
+    <th>Active</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody align="center">
+  <% @photos.each do |photo| %>
+    <tr>
+      <td ><%= image_tag(photo.url, :style=>'width:200px') %></td>
+      <td><%= photo.description %></td>
+      <td><%= if(photo.active)then image_tag('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Button_Icon_Green.svg/1024px-Button_Icon_Green.svg.png',:style=>'width:30px') else image_tag('http://www.urltarget.com/images/red-green-icon-blue-simple-glossy-circle-cartoon.png',:style=>'width:30px') end %></td>
+      <td><%= link_to image_tag('https://cdn2.iconfinder.com/data/icons/picons-essentials/71/visibility-512.png',:style=>'width:50px'), photo %></td>
+      <% if !current_user.nil? %>
+        <td><%= link_to image_tag('https://cdn1.iconfinder.com/data/icons/hawcons/32/698873-icon-136-document-edit-512.png',:style=>'width:50px'), edit_photo_path(photo) %></td>
+        <td><%= link_to image_tag('http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-delete-icon.png',:style=>'width:50px'), photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

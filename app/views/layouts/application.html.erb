@@ -73,7 +73,7 @@
     <div id="navbar">
     <a class="active" href="<%= root_path %>">Home</a>
     <a href="<%= photos_path %>">Pins</a>
-    <a href="javascript:void(0)">My Pins</a>
+    <a href="<%= mypins_path %>">My Pins</a>
     <% if current_user.nil? %>
     <a class="navbar-right" href="<%= new_user_session_path %>">Log In</a>
 
@@ -114,4 +114,7 @@
           }
       }
   </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.1/masonry.pkgd.js">
+
+</script>
 </html>

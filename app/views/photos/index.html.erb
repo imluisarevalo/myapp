@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Photos</h1>
-
+<div id="grid">
 <table class="table table-hover">
   <thead>
-  <tr>
+  <tr class="grid-item" style="width: 25%">
       <td>
         <% if user_signed_in? %>
-      <%= link_to image_tag('http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/add-1-icon.png',:style=>'width:50px'), new_photo_path %>
+           <%= link_to image_tag('http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/add-1-icon.png',:style=>'width:50px'), new_photo_path %>
         <% end %>
       <td>
   </tr>
-    <tr>
+    <tr class="grid-item" style="width: 25%">
       <th>Url</th>
       <th>Description</th>
       <th>Active</th>
@@ -21,7 +21,7 @@
 
   <tbody align="center">
     <% @photos.each do |photo| %>
-      <tr>
+      <tr class="grid-item" style="width: 25%">
         <td ><%= image_tag(photo.url, :style=>'width:200px') %></td>
         <td><%= photo.description %></td>
         <td><%= if(photo.active)then image_tag('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Button_Icon_Green.svg/1024px-Button_Icon_Green.svg.png',:style=>'width:30px') else image_tag('http://www.urltarget.com/images/red-green-icon-blue-simple-glossy-circle-cartoon.png',:style=>'width:30px') end %></td>
@@ -34,7 +34,24 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
+<
+<script type="text/javascript" charset="utf-8">
+    $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+    $(window).load(function () {
+      $('.grid').masonry({
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: 200
+      });
+  })
+
+</script>
 
 
