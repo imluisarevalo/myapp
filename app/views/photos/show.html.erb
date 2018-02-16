@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<table>
+<tr>
+    <td>
+    
+    <strong>Url:</strong>
+    <%= image_tag(@photo.url,:style=>'width:200px') %>
+    </td>
+    <td>
+    <strong>Description:</strong>
+    <%= @photo.description %>
+    </td>
+    <td>
+    <strong>Active:</strong>
+    <%= @photo.active %>
+    </td>
+</tr>
+</table>
+
+
+
+
+<%= link_to image_tag('https://cdn1.iconfinder.com/data/icons/hawcons/32/698873-icon-136-document-edit-512.png',:style=>'width:50px'), edit_photo_path(@photo) %> |
+<%= link_to image_tag('http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/arrow-back-icon.png',:style=>'width:50px'), photos_path %>
