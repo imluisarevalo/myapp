@@ -74,13 +74,14 @@
     <a class="active" href="<%= root_path %>">Home</a>
     <a href="<%= photos_path %>">Pins</a>
     <a href="javascript:void(0)">My Pins</a>
+    <% if current_user.nil? %>
+    <a class="navbar-right" href="<%= new_user_session_path %>">Log In</a>
 
-    <a href="javascript:void(0)">Log In</a>
-
-    <a href="javascript:void(0)">Log Out</a>
-
-    <a href="javascript:void(0)">Exit</a>
-  </div>
+    <a class="navbar-right" href="<%= new_user_registration_path %>">Log Out</a>
+    <% else %>
+    <a class="navbar-right" href="<%= destroy_user_session_path %>" data-method="delete">Exit</a>
+    <% end %>
+        </div>
   <div class="container" style=" width: 70%;
   min-height: 100%;
   margin: 0 auto;
@@ -90,6 +91,9 @@
   box-sizing: border-box;
   overflow: hidden;">
   <!-- /About -->
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
 
 
