@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, :value => current_user.id,hidded:true %>
+    <%= form.label :user_id, hidden:true %>
+    <%= form.text_field :user_id, :value => current_user.id,hidden:true %>
   </div>
 
   <div class="actions">
