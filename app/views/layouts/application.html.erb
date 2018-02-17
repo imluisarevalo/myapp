@@ -71,15 +71,17 @@
 
   <body background="https://theresortgroupplc.com/wp-content/uploads/2016/12/shutterstock_245476081resized.jpg">
     <div id="navbar">
-    <a class="active" href="<%= root_path %>">Home</a>
-    <a href="<%= photos_path %>">Pins</a>
-    <a href="<%= mypins_path %>">My Pins</a>
+    <a class="active" href="<%= root_path %>">Home <img src="http://s966.info/library/h/home-icon-png-white/home-icon-png-white-03.png" style="width:25px"/> </a>
+    <a href="<%= photos_path %>">Pins <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/256x256/Other/Pin.png" style="width:25px"></img> </a>
+    <a href="<%= mypins_path %>">My Pins <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/256x256/Other/Pin.png" style="width:25px"></img> </a>
     <% if current_user.nil? %>
-    <a class="navbar-right" href="<%= new_user_session_path %>">Log In</a>
+    <a class="navbar-right" href="<%= new_user_session_path %>">   Log In <img src="https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/user-512.png" style="width:25px"></img> </a>
 
-    <a class="navbar-right" href="<%= new_user_registration_path %>">Log Up</a>
+    <a class="navbar-right" href="<%= new_user_registration_path %>">  Sign up <img src="http://www.ymcaswkansas.org/sites/ymcaswkansas.oneeach.org/files/civicrm/friend.png" style="width:25px"/>   </a>
+    
+    
     <% else %>
-    <a class="navbar-right" href="<%= destroy_user_session_path %>" data-method="delete">Exit</a>
+    <a class="navbar-right" href="<%= destroy_user_session_path %>" data-method="delete">    Exit <img src="http://www.clker.com/cliparts/4/8/K/S/j/6/exit-button-hi.png" style="width:25px">   </a>
     <% end %>
     
         </div>
