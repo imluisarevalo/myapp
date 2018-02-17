@@ -81,7 +81,7 @@
     
     
     <% else %>
-    <a class="navbar-right" href="<%= destroy_user_session_path %>" data-method="delete">    Exit <img src="http://www.clker.com/cliparts/4/8/K/S/j/6/exit-button-hi.png" style="width:25px">   </a>
+    <a class="navbar-right" href="<%= destroy_user_session_path %>" data-method="delete"><img src="http://www.clker.com/cliparts/4/8/K/S/j/6/exit-button-hi.png" style="width:25px" alt="Exit" title="Exit"> <%= current_user.email %>  </a>
     <% end %>
     
         </div>
